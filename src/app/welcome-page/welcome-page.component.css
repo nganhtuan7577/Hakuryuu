@@ -1,0 +1,10 @@
+.div {
+    align-self: center;
+    align-content: center;
+    align-items: center;
+}
+
+.mat-grid-tile {
+    background-color: aquamarine;
+    border: 1px solid maroon;
+}

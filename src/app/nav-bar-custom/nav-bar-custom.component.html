@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="push" [opened]="(isHandset$ | async)">
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">chevron_left</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item routerLink="anime" routerLinkActive='active' (click)="drawer.toggle()"><i class="fas fa-dog"></i><span class="menuName">Anime</span></a>
+            <a mat-list-item routerLink="film" routerLinkActive='active' (click)="drawer.toggle()"><i class="fas fa-cat"></i><span class="menuName">Film</span></a>
+            <a mat-list-item routerLink="manga" routerLinkActive='active' (click)="drawer.toggle()"><i class="fas fa-kiwi-bird"></i><span class="menuName">Manga</span></a>
+            <a mat-list-item routerLink="book" routerLinkActive='active' (click)="drawer.toggle()"><i class="fas fa-frog"></i><span class="menuName">Book</span></a>
+            <a mat-list-item routerLink="game" routerLinkActive='active' (click)="drawer.toggle()"><i class="fas fa-dragon"></i><span class="menuName">Game</span></a>
+            <a mat-list-item routerLink="other" routerLinkActive='active' (click)="drawer.toggle()"><i class="fas fa-spider"></i><span class="menuName">Other</span></a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span class="menuName">My Lists</span>
+        </mat-toolbar>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
