@@ -8,6 +8,8 @@ import { BooksComponent } from './books/books.component';
 import { MangasComponent } from './mangas/mangas.component';
 import { GamesComponent } from './games/games.component';
 import { OtherComponent } from './other/other.component';
+import { LoginComponent } from './login/login.component';
+import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,8 +29,10 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const RoutingComponent = [
+    LoginComponent,
     WelcomePageComponent,
     AnimesComponent,
+    AnimeDetailComponent,
     FilmsComponent,
     BooksComponent,
     MangasComponent,

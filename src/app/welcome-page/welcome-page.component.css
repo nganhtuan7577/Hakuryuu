@@ -1,10 +1,4 @@
-.div {
-    align-self: center;
-    align-content: center;
-    align-items: center;
-}
-
-.mat-grid-tile {
-    background-color: aquamarine;
-    border: 1px solid maroon;
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkgreen;
 }
