@@ -15,6 +15,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: WelcomePageComponent },
     { path: 'anime', component: AnimesComponent },
+    { path: 'anime/:id', component: AnimeDetailComponent },
     { path: 'film', component: FilmsComponent },
     { path: 'book', component: BooksComponent },
     { path: 'manga', component: MangasComponent },

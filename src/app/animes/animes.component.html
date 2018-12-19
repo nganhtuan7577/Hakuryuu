@@ -1,5 +1,13 @@
 <mat-grid-list cols="10" rowHeight="1:2">
-    <mat-grid-tile [colspan]='2' *ngFor='let anime of tempData'>
-        <app-anime-detail class="detail" [anime]='anime'></app-anime-detail>
+    <mat-grid-tile [colspan]='2' *ngFor='let anime of data' (click)='onSelect(anime)'>
+        <!-- <app-anime-detail class="detail" [anime]='anime'></app-anime-detail> -->
+        <div class="parent">
+            <div class="image">
+                <img src="{{anime.imgSrc}}" alt="{{anime.name}}">
+            </div>
+            <div class="name">
+                <a routerLink='{{anime.id}}'>{{anime.name}}</a>
+            </div>
+        </div>
     </mat-grid-tile>
 </mat-grid-list>
