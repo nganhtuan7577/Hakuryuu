@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Object } from '../object';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { DataService } from '../services/data.service';
 export class AnimesComponent implements OnInit {
 
     public data;
-    constructor(private router: Router, private dataService: DataService) { }
+    constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute) { }
 
     ngOnInit() {
         this.dataService.getListData('anime')
@@ -19,7 +19,7 @@ export class AnimesComponent implements OnInit {
     }
 
     onSelect(anime) {
-        this.router.navigate(['/anime', anime.id]);
+        this.router.navigate([anime.id], {relativeTo: this.route});
     }
 
 }

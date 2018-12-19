@@ -11,16 +11,26 @@ import { OtherComponent } from './other/other.component';
 import { LoginComponent } from './login/login.component';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 
+export const path = {
+    home: 'home',
+    anime: 'anime',
+    animeDetail: 'anime/:id',
+    film: 'film',
+    manga: 'manga',
+    book: 'book',
+    game: 'game',
+    other: 'other'
+}
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: WelcomePageComponent },
-    { path: 'anime', component: AnimesComponent },
-    { path: 'anime/:id', component: AnimeDetailComponent },
-    { path: 'film', component: FilmsComponent },
-    { path: 'book', component: BooksComponent },
-    { path: 'manga', component: MangasComponent },
-    { path: 'game', component: GamesComponent },
-    { path: 'other', component: OtherComponent },
+    { path: path.home, component: WelcomePageComponent },
+    { path: path.anime, component: AnimesComponent },
+    { path: path.animeDetail, component: AnimeDetailComponent },
+    { path: path.film, component: FilmsComponent },
+    { path: path.book, component: BooksComponent },
+    { path: path.manga, component: MangasComponent },
+    { path: path.game, component: GamesComponent },
+    { path: path.other, component: OtherComponent },
     { path: '**', component: NotFoundComponent }
 ];
 

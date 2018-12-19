@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Object } from '../object';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -14,7 +14,10 @@ export class AnimeDetailComponent implements OnInit {
     constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
     ngOnInit() {
-        let id = parseInt(this.route.snapshot.paramMap.get('id'));
+        let id;
+        this.route.paramMap.subscribe((params: ParamMap) => {
+            id = parseInt(params.get('id'))
+        })
         this.dataService.getData('anime', id)
             .subscribe(data => this.anime = data[0]);
     }
