@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-import { path } from '../app-routing.module';
+import { path } from '../../app-routing.module';
 
 @Component({
     selector: 'app-nav-bar-custom',

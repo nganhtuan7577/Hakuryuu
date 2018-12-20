@@ -12,11 +12,15 @@ export class DataService {
 
     constructor(private httpClient: HttpClient) { }
 
-    getListData(database): Observable<Object[]> {
-        return this.httpClient.get<Object[]>(this.baseUrl + database);
+    getListData(path): Observable<Object[]> {
+        return this.httpClient.get<Object[]>(this.baseUrl + path);
     }
 
-    getData(database, id): Observable<Object> {
-        return this.httpClient.get<Object>(this.baseUrl + database + "/" + id);
+    getData(path, id): Observable<Object> {
+        return this.httpClient.get<Object>(this.baseUrl + path + "/" + id);
+    }
+
+    addData(path, data): Observable<Object> {
+        return this.httpClient.post<Object>(this.baseUrl + path, data);
     }
 }

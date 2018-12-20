@@ -1,0 +1,18 @@
+<app-bar-custom [appBarParams]='appBarParams'></app-bar-custom>
+<div class="addForm">
+    <mat-form-field>
+        <input matInput [(ngModel)]="newAnime.name" placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="newAnime.imgSrc" placeholder="Image directory">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="newAnime.type" placeholder="Type">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="newAnime.description" placeholder="Description">
+    </mat-form-field>
+    <button type="button" aria-label="Submit Form" mat-flat-button color="primary" (click)="onSubmit()">
+        {{"Submit" | uppercase}}
+    </button>
+</div>

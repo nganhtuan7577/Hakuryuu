@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Object } from '../object';
+import { Object } from '../../object';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { DataService } from '../services/data.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
     selector: 'app-anime-detail',
@@ -11,6 +11,10 @@ import { DataService } from '../services/data.service';
 export class AnimeDetailComponent implements OnInit {
 
     public anime;
+    public appBarParams = {
+        title: 'Anime List',
+        rightAction: ["edit", "delete", "close"]
+    }
     constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
     ngOnInit() {
